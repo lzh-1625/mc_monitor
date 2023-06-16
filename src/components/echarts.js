@@ -22,7 +22,7 @@ export default class Chart extends Component {
       },
       yAxis: {
         minInterval: 1,
-        name: "在线人数",
+        name: this.props.title,
         type: "value",
       },
       series: [
@@ -38,7 +38,7 @@ export default class Chart extends Component {
   render() {
     return (
       <Card style={{"width":"60%","marginLeft":"20%","marginTop":"10px","marginBottom":"10px"}}>
-        <CardHeader title={"asdasdsa"}></CardHeader>
+        <CardHeader title={this.props.title}></CardHeader>
         <CardContent >
           <div id="main" style={{ height: "300px",width:"auto" }}></div>
         </CardContent>

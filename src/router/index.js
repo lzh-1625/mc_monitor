@@ -73,7 +73,7 @@ export default function Home() {
     >
       <List onClick={itemClick}>
         {["主页", "分类", "Send email", "Drafts"].map((text, index) => (
-          <NavLink to={routerMap.get(text)} style={{ "text-decoration":"none","color":"black"}}>  
+          <NavLink to={routerMap.get(text)} style={{"color":"black"}}>  
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -87,7 +87,7 @@ export default function Home() {
   );
   return (
     <div className={classes.root} style={{"backgroundImage":`url(${background})`,"position": "absolute","height":"100%","width":"100%"}}> 
-      <AppBar position="static" color="">
+      <AppBar position="static" >
         <Toolbar variant="dense">
           <IconButton
             edge="start"
