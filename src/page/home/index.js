@@ -1,12 +1,27 @@
 import React, { Component } from "react";
-import Chart from "../../components/echarts"
+import Chart from "../../components/echarts";
+import { getEchartData } from "../../api/monitor";
 
-export default function Home() {
-
-  return (
-    <div>
-      <Chart title={"最高人数"} className={"asd"}>
-      </Chart>
-    </div>
-  );
+class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+    };
+  }
+  async componentDidMount() {
+    let res = await getEchartData();
+    this.setState({ data: res.data });
+  }
+  render() {
+    return (
+      <div>
+        <Chart key={"chart"}
+          data={this.state.data}
+        ></Chart>
+      </div>
+    );
+  }
 }
+
+export default Home;

@@ -12,7 +12,7 @@ export default function App() {
                 element: <Router></Router>,
                 children: [
                     {
-                        path: 'Home',
+                        path: '/',
                         element: <Home />,
                     },
                 ],
